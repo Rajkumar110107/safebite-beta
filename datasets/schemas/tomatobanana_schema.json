@@ -1,0 +1,191 @@
+{
+  "dataset_id": "tomatobanana",
+  "file_name": "TomatoBanana.csv",
+  "relative_path": "AllSmaples-Report/AllSmaples-Report/TomatoBanana.csv",
+  "total_rows": 23159,
+  "total_columns": 10,
+  "columns": {
+    "Ticks": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 23158,
+      "sample_values": [
+        "1650984770119",
+        "1650984770133",
+        "1650984770141",
+        "1650984770149",
+        "1650984770157"
+      ],
+      "min": 1650984770119.0,
+      "max": 1650984964340.0,
+      "mean": 1650984866551.9148,
+      "std": 55826.9325
+    },
+    "MQ2": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 48,
+      "sample_values": [
+        "48",
+        "58",
+        "51",
+        "56",
+        "55"
+      ],
+      "min": 40.0,
+      "max": 106.0,
+      "mean": 63.8038,
+      "std": 5.5831
+    },
+    "MQ3": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 73,
+      "sample_values": [
+        "221",
+        "207",
+        "203",
+        "206",
+        "202"
+      ],
+      "min": 188.0,
+      "max": 321.0,
+      "mean": 227.9445,
+      "std": 9.7316
+    },
+    "MQ4": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 44,
+      "sample_values": [
+        "66",
+        "73",
+        "72",
+        "71",
+        "70"
+      ],
+      "min": 58.0,
+      "max": 102.0,
+      "mean": 77.5934,
+      "std": 5.108
+    },
+    "MQ5": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 52,
+      "sample_values": [
+        "75",
+        "57",
+        "56",
+        "65",
+        "54"
+      ],
+      "min": 50.0,
+      "max": 101.0,
+      "mean": 72.6969,
+      "std": 6.3982
+    },
+    "MQ6": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 76,
+      "sample_values": [
+        "77",
+        "84",
+        "89",
+        "88",
+        "85"
+      ],
+      "min": 75.0,
+      "max": 155.0,
+      "mean": 102.6799,
+      "std": 7.7963
+    },
+    "MQ7": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 43,
+      "sample_values": [
+        "45",
+        "38",
+        "40",
+        "41",
+        "42"
+      ],
+      "min": 28.0,
+      "max": 73.0,
+      "mean": 53.5948,
+      "std": 5.4209
+    },
+    "MQ8": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 80,
+      "sample_values": [
+        "154",
+        "146",
+        "145",
+        "149",
+        "142"
+      ],
+      "min": 124.0,
+      "max": 214.0,
+      "mean": 176.3819,
+      "std": 12.1919
+    },
+    "MQ9": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 40,
+      "sample_values": [
+        "57",
+        "68",
+        "70",
+        "69",
+        "71"
+      ],
+      "min": 57.0,
+      "max": 98.0,
+      "mean": 77.1419,
+      "std": 4.6875
+    },
+    "MQ135": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 192,
+      "sample_values": [
+        "1119",
+        "1098",
+        "1097",
+        "1102",
+        "1100"
+      ],
+      "min": 1000.0,
+      "max": 1309.0,
+      "mean": 1226.7534,
+      "std": 39.1409
+    }
+  },
+  "actual_loaded_rows": 23158,
+  "actual_loaded_cols": 10
+}

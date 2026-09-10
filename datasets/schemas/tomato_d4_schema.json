@@ -1,0 +1,191 @@
+{
+  "dataset_id": "tomato_d4",
+  "file_name": "Tomato D4.csv",
+  "relative_path": "AllSmaples-Report/AllSmaples-Report/Tomato D4.csv",
+  "total_rows": 11766,
+  "total_columns": 10,
+  "columns": {
+    "Ticks": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 11765,
+      "sample_values": [
+        "1648893612091",
+        "1648893612105",
+        "1648893612113",
+        "1648893612121",
+        "1648893612129"
+      ],
+      "min": 1648893612091.0,
+      "max": 1648893721708.0,
+      "mean": 1648893666256.2979,
+      "std": 31742.8783
+    },
+    "MQ2": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 77,
+      "sample_values": [
+        "89",
+        "77",
+        "70",
+        "74",
+        "73"
+      ],
+      "min": 54.0,
+      "max": 155.0,
+      "mean": 96.2377,
+      "std": 11.9741
+    },
+    "MQ3": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 199,
+      "sample_values": [
+        "290",
+        "269",
+        "267",
+        "273",
+        "242"
+      ],
+      "min": 242.0,
+      "max": 485.0,
+      "mean": 425.9677,
+      "std": 28.2397
+    },
+    "MQ4": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 50,
+      "sample_values": [
+        "90",
+        "82",
+        "75",
+        "79",
+        "80"
+      ],
+      "min": 64.0,
+      "max": 114.0,
+      "mean": 86.6898,
+      "std": 6.3753
+    },
+    "MQ5": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 77,
+      "sample_values": [
+        "84",
+        "90",
+        "93",
+        "89",
+        "87"
+      ],
+      "min": 78.0,
+      "max": 159.0,
+      "mean": 132.5317,
+      "std": 9.582
+    },
+    "MQ6": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 71,
+      "sample_values": [
+        "77",
+        "81",
+        "75",
+        "84",
+        "76"
+      ],
+      "min": 69.0,
+      "max": 140.0,
+      "mean": 112.7819,
+      "std": 10.0124
+    },
+    "MQ7": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 75,
+      "sample_values": [
+        "41",
+        "57",
+        "58",
+        "51",
+        "52"
+      ],
+      "min": 41.0,
+      "max": 119.0,
+      "mean": 90.304,
+      "std": 11.7086
+    },
+    "MQ8": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 173,
+      "sample_values": [
+        "189",
+        "201",
+        "198",
+        "199",
+        "200"
+      ],
+      "min": 189.0,
+      "max": 413.0,
+      "mean": 323.1711,
+      "std": 29.0813
+    },
+    "MQ9": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 51,
+      "sample_values": [
+        "74",
+        "76",
+        "68",
+        "71",
+        "70"
+      ],
+      "min": 52.0,
+      "max": 103.0,
+      "mean": 79.9788,
+      "std": 5.8755
+    },
+    "MQ135": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 594,
+      "sample_values": [
+        "942",
+        "919",
+        "924",
+        "925",
+        "928"
+      ],
+      "min": 882.0,
+      "max": 1515.0,
+      "mean": 1372.5456,
+      "std": 137.3837
+    }
+  },
+  "actual_loaded_rows": 11765,
+  "actual_loaded_cols": 10
+}

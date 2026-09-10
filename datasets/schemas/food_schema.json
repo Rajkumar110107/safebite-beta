@@ -1,0 +1,75 @@
+{
+  "dataset_id": "food",
+  "file_name": "food.csv",
+  "relative_path": "food/food.csv",
+  "total_rows": 31,
+  "total_columns": 4,
+  "columns": {
+    "gas_value": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 28,
+      "sample_values": [
+        "100",
+        "120",
+        "140",
+        "160",
+        "180"
+      ],
+      "min": 0.0,
+      "max": 1000.0,
+      "mean": 394.8333,
+      "std": 310.8678
+    },
+    "presence": {
+      "inferred_type": "binary_indicator",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 2,
+      "sample_values": [
+        "1",
+        "0"
+      ],
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.8333,
+      "std": 0.379
+    },
+    "storageDays": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 6,
+      "sample_values": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "min": 0.0,
+      "max": 5.0,
+      "mean": 2.3333,
+      "std": 1.6259
+    },
+    "status": {
+      "inferred_type": "categorical",
+      "pandas_dtype": "str",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 4,
+      "sample_values": [
+        "Fresh",
+        "Consume Soon",
+        "Spoiled",
+        "No Food"
+      ]
+    }
+  },
+  "actual_loaded_rows": 30,
+  "actual_loaded_cols": 4
+}

@@ -1,0 +1,191 @@
+{
+  "dataset_id": "grape_d5",
+  "file_name": "Grape D5.csv",
+  "relative_path": "AllSmaples-Report/AllSmaples-Report/Grape D5.csv",
+  "total_rows": 12220,
+  "total_columns": 10,
+  "columns": {
+    "Ticks": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 12219,
+      "sample_values": [
+        "1649013059099",
+        "1649013059111",
+        "1649013059121",
+        "1649013059130",
+        "1649013059138"
+      ],
+      "min": 1649013059099.0,
+      "max": 1649013182175.0,
+      "mean": 1649013119223.1738,
+      "std": 35230.1992
+    },
+    "MQ2": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 62,
+      "sample_values": [
+        "50",
+        "46",
+        "49",
+        "52",
+        "48"
+      ],
+      "min": 40.0,
+      "max": 103.0,
+      "mean": 77.0833,
+      "std": 10.41
+    },
+    "MQ3": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 181,
+      "sample_values": [
+        "438",
+        "439",
+        "437",
+        "435",
+        "436"
+      ],
+      "min": 402.0,
+      "max": 597.0,
+      "mean": 521.0851,
+      "std": 41.7795
+    },
+    "MQ4": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 51,
+      "sample_values": [
+        "64",
+        "69",
+        "67",
+        "68",
+        "61"
+      ],
+      "min": 56.0,
+      "max": 175.0,
+      "mean": 80.9209,
+      "std": 7.1381
+    },
+    "MQ5": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 106,
+      "sample_values": [
+        "129",
+        "123",
+        "128",
+        "126",
+        "132"
+      ],
+      "min": 120.0,
+      "max": 231.0,
+      "mean": 193.6767,
+      "std": 15.2271
+    },
+    "MQ6": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 70,
+      "sample_values": [
+        "80",
+        "77",
+        "81",
+        "78",
+        "74"
+      ],
+      "min": 73.0,
+      "max": 143.0,
+      "mean": 118.5603,
+      "std": 9.3828
+    },
+    "MQ7": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 76,
+      "sample_values": [
+        "46",
+        "49",
+        "47",
+        "45",
+        "48"
+      ],
+      "min": 34.0,
+      "max": 114.0,
+      "mean": 88.8236,
+      "std": 10.7746
+    },
+    "MQ8": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 207,
+      "sample_values": [
+        "229",
+        "232",
+        "230",
+        "234",
+        "227"
+      ],
+      "min": 227.0,
+      "max": 436.0,
+      "mean": 375.4874,
+      "std": 33.9255
+    },
+    "MQ9": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 44,
+      "sample_values": [
+        "65",
+        "66",
+        "67",
+        "75",
+        "69"
+      ],
+      "min": 56.0,
+      "max": 104.0,
+      "mean": 75.5303,
+      "std": 4.6487
+    },
+    "MQ135": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 644,
+      "sample_values": [
+        "971",
+        "966",
+        "968",
+        "975",
+        "973"
+      ],
+      "min": 962.0,
+      "max": 1651.0,
+      "mean": 1516.1504,
+      "std": 132.7559
+    }
+  },
+  "actual_loaded_rows": 12219,
+  "actual_loaded_cols": 10
+}

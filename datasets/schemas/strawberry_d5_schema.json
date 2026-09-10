@@ -1,0 +1,191 @@
+{
+  "dataset_id": "strawberry_d5",
+  "file_name": "Strawberry D5.csv",
+  "relative_path": "AllSmaples-Report/AllSmaples-Report/Strawberry D5.csv",
+  "total_rows": 13486,
+  "total_columns": 10,
+  "columns": {
+    "Ticks": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 13485,
+      "sample_values": [
+        "1649013717091",
+        "1649013717105",
+        "1649013717113",
+        "1649013717122",
+        "1649013717130"
+      ],
+      "min": 1649013717091.0,
+      "max": 1649013844639.0,
+      "mean": 1649013782019.7493,
+      "std": 37837.8406
+    },
+    "MQ2": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 138,
+      "sample_values": [
+        "144",
+        "147",
+        "139",
+        "146",
+        "145"
+      ],
+      "min": 129.0,
+      "max": 270.0,
+      "mean": 220.5373,
+      "std": 33.2509
+    },
+    "MQ3": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 151,
+      "sample_values": [
+        "888",
+        "881",
+        "879",
+        "880",
+        "878"
+      ],
+      "min": 707.0,
+      "max": 900.0,
+      "mean": 829.2469,
+      "std": 27.2795
+    },
+    "MQ4": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 53,
+      "sample_values": [
+        "99",
+        "87",
+        "95",
+        "94",
+        "91"
+      ],
+      "min": 76.0,
+      "max": 131.0,
+      "mean": 102.5084,
+      "std": 7.6297
+    },
+    "MQ5": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 249,
+      "sample_values": [
+        "606",
+        "593",
+        "596",
+        "595",
+        "600"
+      ],
+      "min": 528.0,
+      "max": 807.0,
+      "mean": 707.8444,
+      "std": 59.1565
+    },
+    "MQ6": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 179,
+      "sample_values": [
+        "414",
+        "396",
+        "398",
+        "397",
+        "395"
+      ],
+      "min": 367.0,
+      "max": 590.0,
+      "mean": 518.8494,
+      "std": 36.5036
+    },
+    "MQ7": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 72,
+      "sample_values": [
+        "138",
+        "151",
+        "143",
+        "147",
+        "150"
+      ],
+      "min": 138.0,
+      "max": 217.0,
+      "mean": 182.3772,
+      "std": 13.0468
+    },
+    "MQ8": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 253,
+      "sample_values": [
+        "880",
+        "883",
+        "878",
+        "884",
+        "882"
+      ],
+      "min": 854.0,
+      "max": 1126.0,
+      "mean": 1013.039,
+      "std": 50.1734
+    },
+    "MQ9": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 175,
+      "sample_values": [
+        "320",
+        "287",
+        "318",
+        "321",
+        "322"
+      ],
+      "min": 287.0,
+      "max": 482.0,
+      "mean": 420.1802,
+      "std": 32.1458
+    },
+    "MQ135": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 367,
+      "sample_values": [
+        "2591",
+        "2576",
+        "2568",
+        "2567",
+        "2570"
+      ],
+      "min": 2564.0,
+      "max": 2975.0,
+      "mean": 2823.1393,
+      "std": 88.4762
+    }
+  },
+  "actual_loaded_rows": 13485,
+  "actual_loaded_cols": 10
+}

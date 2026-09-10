@@ -1,0 +1,191 @@
+{
+  "dataset_id": "kiwi_d5",
+  "file_name": "Kiwi D5.csv",
+  "relative_path": "AllSmaples-Report/AllSmaples-Report/Kiwi D5.csv",
+  "total_rows": 10260,
+  "total_columns": 10,
+  "columns": {
+    "Ticks": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 10259,
+      "sample_values": [
+        "1649012137091",
+        "1649012137104",
+        "1649012137113",
+        "1649012137120",
+        "1649012137128"
+      ],
+      "min": 1649012137091.0,
+      "max": 1649012259044.0,
+      "mean": 1649012195582.5881,
+      "std": 36896.3501
+    },
+    "MQ2": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 69,
+      "sample_values": [
+        "68",
+        "64",
+        "67",
+        "69",
+        "63"
+      ],
+      "min": 54.0,
+      "max": 123.0,
+      "mean": 94.3892,
+      "std": 10.96
+    },
+    "MQ3": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 138,
+      "sample_values": [
+        "614",
+        "619",
+        "621",
+        "620",
+        "623"
+      ],
+      "min": 568.0,
+      "max": 739.0,
+      "mean": 672.4758,
+      "std": 28.8465
+    },
+    "MQ4": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 56,
+      "sample_values": [
+        "89",
+        "80",
+        "86",
+        "83",
+        "82"
+      ],
+      "min": 71.0,
+      "max": 126.0,
+      "mean": 100.2821,
+      "std": 8.3992
+    },
+    "MQ5": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 233,
+      "sample_values": [
+        "327",
+        "314",
+        "312",
+        "323",
+        "320"
+      ],
+      "min": 312.0,
+      "max": 551.0,
+      "mean": 483.4667,
+      "std": 42.6781
+    },
+    "MQ6": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 158,
+      "sample_values": [
+        "136",
+        "128",
+        "126",
+        "130",
+        "131"
+      ],
+      "min": 116.0,
+      "max": 279.0,
+      "mean": 230.0122,
+      "std": 36.4374
+    },
+    "MQ7": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 83,
+      "sample_values": [
+        "72",
+        "67",
+        "66",
+        "65",
+        "64"
+      ],
+      "min": 57.0,
+      "max": 140.0,
+      "mean": 112.7705,
+      "std": 13.6065
+    },
+    "MQ8": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 305,
+      "sample_values": [
+        "461",
+        "403",
+        "448",
+        "449",
+        "446"
+      ],
+      "min": 403.0,
+      "max": 754.0,
+      "mean": 669.2883,
+      "std": 53.9066
+    },
+    "MQ9": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 126,
+      "sample_values": [
+        "100",
+        "97",
+        "93",
+        "99",
+        "90"
+      ],
+      "min": 84.0,
+      "max": 211.0,
+      "mean": 163.0896,
+      "std": 26.5707
+    },
+    "MQ135": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 757,
+      "sample_values": [
+        "1471",
+        "1452",
+        "1450",
+        "1458",
+        "1455"
+      ],
+      "min": 1449.0,
+      "max": 2217.0,
+      "mean": 2031.0573,
+      "std": 196.954
+    }
+  },
+  "actual_loaded_rows": 10259,
+  "actual_loaded_cols": 10
+}

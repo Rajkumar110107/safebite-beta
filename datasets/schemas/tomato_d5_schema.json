@@ -1,0 +1,191 @@
+{
+  "dataset_id": "tomato_d5",
+  "file_name": "tomato D5.csv",
+  "relative_path": "AllSmaples-Report/AllSmaples-Report/tomato D5.csv",
+  "total_rows": 12035,
+  "total_columns": 10,
+  "columns": {
+    "Ticks": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 12034,
+      "sample_values": [
+        "1649013367099",
+        "1649013367112",
+        "1649013367121",
+        "1649013367131",
+        "1649013367143"
+      ],
+      "min": 1649013367099.0,
+      "max": 1649013493791.0,
+      "mean": 1649013434608.054,
+      "std": 36405.7615
+    },
+    "MQ2": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 80,
+      "sample_values": [
+        "59",
+        "60",
+        "57",
+        "52",
+        "56"
+      ],
+      "min": 45.0,
+      "max": 138.0,
+      "mean": 93.5087,
+      "std": 13.787
+    },
+    "MQ3": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 227,
+      "sample_values": [
+        "365",
+        "368",
+        "374",
+        "373",
+        "370"
+      ],
+      "min": 365.0,
+      "max": 598.0,
+      "mean": 552.4884,
+      "std": 32.1213
+    },
+    "MQ4": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 58,
+      "sample_values": [
+        "63",
+        "70",
+        "69",
+        "68",
+        "71"
+      ],
+      "min": 60.0,
+      "max": 144.0,
+      "mean": 88.182,
+      "std": 8.4309
+    },
+    "MQ5": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 147,
+      "sample_values": [
+        "121",
+        "118",
+        "124",
+        "123",
+        "126"
+      ],
+      "min": 118.0,
+      "max": 274.0,
+      "mean": 225.8661,
+      "std": 23.4691
+    },
+    "MQ6": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 96,
+      "sample_values": [
+        "86",
+        "79",
+        "76",
+        "80",
+        "82"
+      ],
+      "min": 72.0,
+      "max": 167.0,
+      "mean": 137.102,
+      "std": 15.8011
+    },
+    "MQ7": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 71,
+      "sample_values": [
+        "46",
+        "50",
+        "42",
+        "52",
+        "43"
+      ],
+      "min": 39.0,
+      "max": 110.0,
+      "mean": 87.0357,
+      "std": 10.5066
+    },
+    "MQ8": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 214,
+      "sample_values": [
+        "214",
+        "207",
+        "213",
+        "209",
+        "208"
+      ],
+      "min": 198.0,
+      "max": 420.0,
+      "mean": 375.4905,
+      "std": 37.0179
+    },
+    "MQ9": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 56,
+      "sample_values": [
+        "63",
+        "69",
+        "60",
+        "68",
+        "72"
+      ],
+      "min": 53.0,
+      "max": 111.0,
+      "mean": 84.9127,
+      "std": 7.6159
+    },
+    "MQ135": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 693,
+      "sample_values": [
+        "1116",
+        "1112",
+        "1109",
+        "1108",
+        "1117"
+      ],
+      "min": 1075.0,
+      "max": 1839.0,
+      "mean": 1663.1337,
+      "std": 161.6268
+    }
+  },
+  "actual_loaded_rows": 12034,
+  "actual_loaded_cols": 10
+}

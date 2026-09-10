@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafeBite AI</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#5bdda8",
+                    "surface-container-low": "#f1f4f6",
+                    "tertiary-container": "#e26f68",
+                    "on-background": "#181c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#006c4b",
+                    "inverse-primary": "#5bdda8",
+                    "tertiary-fixed": "#ffdad7",
+                    "on-secondary-fixed": "#121c2c",
+                    "on-secondary-container": "#596376",
+                    "inverse-surface": "#2d3133",
+                    "tertiary-fixed-dim": "#ffb3ad",
+                    "on-tertiary-fixed": "#410004",
+                    "error-container": "#ffdad6",
+                    "surface": "#f7fafc",
+                    "outline-variant": "#bccac0",
+                    "primary-container": "#00a676",
+                    "on-secondary-fixed-variant": "#3d4759",
+                    "on-primary-fixed": "#002114",
+                    "secondary-fixed": "#d9e3f9",
+                    "secondary-container": "#d6e0f6",
+                    "on-primary-container": "#003221",
+                    "primary-fixed": "#7afac3",
+                    "secondary-fixed-dim": "#bdc7dc",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-container-high": "#e5e9eb",
+                    "primary": "#006c4b",
+                    "inverse-on-surface": "#eef1f3",
+                    "on-tertiary-container": "#5a080c",
+                    "tertiary": "#a13e39",
+                    "on-primary-fixed-variant": "#005138",
+                    "secondary": "#555f71",
+                    "surface-bright": "#f7fafc",
+                    "surface-container": "#ebeef0",
+                    "on-tertiary-fixed-variant": "#812624",
+                    "surface-dim": "#d7dadc",
+                    "background": "#f7fafc",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#3d4a42",
+                    "on-surface": "#181c1e",
+                    "surface-variant": "#e0e3e5",
+                    "outline": "#6d7a72"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

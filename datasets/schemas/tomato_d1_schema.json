@@ -1,0 +1,191 @@
+{
+  "dataset_id": "tomato_d1",
+  "file_name": "Tomato D1.csv",
+  "relative_path": "AllSmaples-Report/AllSmaples-Report/Tomato D1.csv",
+  "total_rows": 14635,
+  "total_columns": 10,
+  "columns": {
+    "Ticks": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 14634,
+      "sample_values": [
+        "1648642932099",
+        "1648642932111",
+        "1648642932121",
+        "1648642932130",
+        "1648642932138"
+      ],
+      "min": 1648642932099.0,
+      "max": 1648643165264.0,
+      "mean": 1648643051910.6099,
+      "std": 66564.9203
+    },
+    "MQ2": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 54,
+      "sample_values": [
+        "59",
+        "51",
+        "52",
+        "55",
+        "45"
+      ],
+      "min": 33.0,
+      "max": 88.0,
+      "mean": 61.9949,
+      "std": 6.8684
+    },
+    "MQ3": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 71,
+      "sample_values": [
+        "86",
+        "84",
+        "85",
+        "83",
+        "87"
+      ],
+      "min": 75.0,
+      "max": 146.0,
+      "mean": 122.2682,
+      "std": 7.9882
+    },
+    "MQ4": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 47,
+      "sample_values": [
+        "69",
+        "75",
+        "72",
+        "73",
+        "76"
+      ],
+      "min": 54.0,
+      "max": 112.0,
+      "mean": 75.7865,
+      "std": 5.5475
+    },
+    "MQ5": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 41,
+      "sample_values": [
+        "15",
+        "18",
+        "16",
+        "14",
+        "19"
+      ],
+      "min": 6.0,
+      "max": 46.0,
+      "mean": 25.6062,
+      "std": 4.5205
+    },
+    "MQ6": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 45,
+      "sample_values": [
+        "61",
+        "64",
+        "63",
+        "66",
+        "62"
+      ],
+      "min": 50.0,
+      "max": 128.0,
+      "mean": 71.5615,
+      "std": 5.0891
+    },
+    "MQ7": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 51,
+      "sample_values": [
+        "34",
+        "39",
+        "40",
+        "36",
+        "37"
+      ],
+      "min": 23.0,
+      "max": 78.0,
+      "mean": 50.2169,
+      "std": 6.0352
+    },
+    "MQ8": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 63,
+      "sample_values": [
+        "78",
+        "76",
+        "72",
+        "74",
+        "79"
+      ],
+      "min": 69.0,
+      "max": 136.0,
+      "mean": 107.0393,
+      "std": 6.9368
+    },
+    "MQ9": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 46,
+      "sample_values": [
+        "56",
+        "57",
+        "58",
+        "62",
+        "60"
+      ],
+      "min": 44.0,
+      "max": 96.0,
+      "mean": 68.267,
+      "std": 5.4265
+    },
+    "MQ135": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 199,
+      "sample_values": [
+        "537",
+        "533",
+        "535",
+        "528",
+        "534"
+      ],
+      "min": 505.0,
+      "max": 726.0,
+      "mean": 677.4546,
+      "std": 39.5389
+    }
+  },
+  "actual_loaded_rows": 14634,
+  "actual_loaded_cols": 10
+}

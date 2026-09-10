@@ -1,0 +1,191 @@
+{
+  "dataset_id": "green_apple_d2",
+  "file_name": "Green Apple D2.csv",
+  "relative_path": "AllSmaples-Report/AllSmaples-Report/Green Apple D2.csv",
+  "total_rows": 13126,
+  "total_columns": 10,
+  "columns": {
+    "Ticks": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 13125,
+      "sample_values": [
+        "1648745697101",
+        "1648745697115",
+        "1648745697123",
+        "1648745697131",
+        "1648745697141"
+      ],
+      "min": 1648745697101.0,
+      "max": 1648745817738.0,
+      "mean": 1648745756524.9302,
+      "std": 34798.4413
+    },
+    "MQ2": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 48,
+      "sample_values": [
+        "86",
+        "71",
+        "67",
+        "65",
+        "68"
+      ],
+      "min": 51.0,
+      "max": 100.0,
+      "mean": 73.5813,
+      "std": 5.7233
+    },
+    "MQ3": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 83,
+      "sample_values": [
+        "102",
+        "113",
+        "111",
+        "114",
+        "110"
+      ],
+      "min": 99.0,
+      "max": 184.0,
+      "mean": 147.0312,
+      "std": 9.8755
+    },
+    "MQ4": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 44,
+      "sample_values": [
+        "112",
+        "116",
+        "125",
+        "123",
+        "122"
+      ],
+      "min": 99.0,
+      "max": 142.0,
+      "mean": 119.4981,
+      "std": 4.6503
+    },
+    "MQ5": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 61,
+      "sample_values": [
+        "91",
+        "90",
+        "95",
+        "94",
+        "96"
+      ],
+      "min": 75.0,
+      "max": 136.0,
+      "mean": 104.2664,
+      "std": 9.1976
+    },
+    "MQ6": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 64,
+      "sample_values": [
+        "88",
+        "81",
+        "75",
+        "74",
+        "76"
+      ],
+      "min": 62.0,
+      "max": 126.0,
+      "mean": 98.2696,
+      "std": 8.8323
+    },
+    "MQ7": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 47,
+      "sample_values": [
+        "66",
+        "59",
+        "58",
+        "55",
+        "60"
+      ],
+      "min": 40.0,
+      "max": 89.0,
+      "mean": 65.2054,
+      "std": 5.0534
+    },
+    "MQ8": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 91,
+      "sample_values": [
+        "151",
+        "164",
+        "159",
+        "156",
+        "160"
+      ],
+      "min": 145.0,
+      "max": 243.0,
+      "mean": 190.466,
+      "std": 11.5885
+    },
+    "MQ9": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 44,
+      "sample_values": [
+        "94",
+        "74",
+        "77",
+        "88",
+        "83"
+      ],
+      "min": 67.0,
+      "max": 111.0,
+      "mean": 89.8517,
+      "std": 5.3473
+    },
+    "MQ135": {
+      "inferred_type": "integer",
+      "pandas_dtype": "int64",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 136,
+      "sample_values": [
+        "662",
+        "647",
+        "644",
+        "646",
+        "639"
+      ],
+      "min": 578.0,
+      "max": 768.0,
+      "mean": 721.8483,
+      "std": 26.5693
+    }
+  },
+  "actual_loaded_rows": 13125,
+  "actual_loaded_cols": 10
+}
