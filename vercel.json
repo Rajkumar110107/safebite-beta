@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd safebite && npm run build",
+  "outputDirectory": "safebite/dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

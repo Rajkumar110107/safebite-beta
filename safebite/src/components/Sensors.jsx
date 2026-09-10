@@ -8,9 +8,22 @@ export default function Sensors({ onCalculate, isPredicting }) {
 
     // Fetch Live Data
     useEffect(() => {
+        const getApiBaseUrl = () => {
+            if (import.meta.env.VITE_API_URL) {
+                return import.meta.env.VITE_API_URL.replace(/\/+$/, '');
+            }
+            if (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+                return 'http://localhost:3000';
+            }
+            return null;
+        };
+
+        const apiBase = getApiBaseUrl();
+        if (!apiBase) return;
+
         const fetchSensorData = async () => {
             try {
-                const res = await fetch("http://localhost:3000/latest");
+                const res = await fetch(`${apiBase}/latest`);
                 if (!res.ok) return;
                 const data = await res.json();
                 

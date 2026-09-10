@@ -42,12 +42,29 @@ export function PlatformProvider({ children }) {
   const [backendDeviceStatus, setBackendDeviceStatus] = useState('disconnected');
   const [liveTelemetry, setLiveTelemetry] = useState({ gas_value: 140, presence: 1, storageDays: 1 });
 
+  // Resolve API Base URL from environment or localhost fallback
+  const getApiBaseUrl = () => {
+    if (import.meta.env.VITE_API_URL) {
+      return import.meta.env.VITE_API_URL.replace(/\/+$/, '');
+    }
+    if (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+      return 'http://localhost:3000';
+    }
+    return null;
+  };
+
   // Poll backend for live hardware stream if backend server is running
   useEffect(() => {
+    const apiBase = getApiBaseUrl();
+    if (!apiBase) {
+      setBackendDeviceStatus('disconnected');
+      return;
+    }
+
     let isMounted = true;
     const interval = setInterval(async () => {
       try {
-        const res = await fetch('http://localhost:3000/latest');
+        const res = await fetch(`${apiBase}/latest`);
         if (res.ok && isMounted) {
           const data = await res.json();
           if (data && data.deviceStatus === 'connected' && data.sensorData) {
@@ -85,22 +102,25 @@ export function PlatformProvider({ children }) {
     try {
       // 1. Attempt Backend ML API Call
       let mlData = null;
-      try {
-        const response = await fetch('http://localhost:3000/predict', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            gas_value: gas,
-            presence,
-            storageDays: days,
-            category: prod.category
-          })
-        });
-        if (response.ok) {
-          mlData = await response.json();
+      const apiBase = getApiBaseUrl();
+      if (apiBase) {
+        try {
+          const response = await fetch(`${apiBase}/predict`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              gas_value: gas,
+              presence,
+              storageDays: days,
+              category: prod.category
+            })
+          });
+          if (response.ok) {
+            mlData = await response.json();
+          }
+        } catch (err) {
+          // Backend offline: use deterministic calibrated fallback engine
         }
-      } catch (err) {
-        // Backend offline: use deterministic calibrated fallback engine
       }
 
       // 2. Fallback Engine calibrated against category thresholds
