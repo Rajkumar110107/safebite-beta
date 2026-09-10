@@ -1,132 +1,235 @@
 import React from 'react';
-import ConnectionBadge from './ConnectionBadge';
-import StatusCircle from './StatusCircle';
-import SensorCard from './SensorCard';
-import GasBar from './GasBar';
+import { usePlatform } from '../context/PlatformContext';
 
-export default function Dashboard({ data }) {
-    if (data?.deviceStatus === "disconnected" || data?.error === "Device not connected") {
-        return (
-            <div className="empty-state">
-                <div className="empty-icon text-error animate-pulse">⚠️</div>
-                <h2 className="text-error">Device not connected</h2>
-                <p>Please check the USB connection on COM4 and restart the backend.</p>
-            </div>
-        );
-    }
+export default function Dashboard({ onNavigate }) {
+  const { mode, scans, inventory, batches, alerts, backendDeviceStatus, liveTelemetry } = usePlatform();
 
-    if (!data || !data.prediction || !data.sensorData) {
-        return (
-            <div className="empty-state">
-                <div className="empty-icon animate-pulse text-primary">📡</div>
-                <h2>Waiting for sensor data...</h2>
-                <p>Reading data from hardware (COM4)...</p>
-            </div>
-        );
-    }
+  const totalScans = scans.length;
+  const freshScans = scans.filter((s) => s.condition === 'FRESH').length;
+  const warningScans = scans.filter((s) => s.condition === 'CONSUME_SOON').length;
+  const spoiledScans = scans.filter((s) => s.condition === 'SPOILED').length;
+  const activeAlerts = alerts.filter((a) => !a.resolved);
 
-    const { deviceStatus, prediction, sensorData } = data;
-
-    // Presence Badge Logic Fix
-    const presence = sensorData?.presence;
-    console.log("Frontend Presence:", presence);
-    
-    let hasFood = false;
-    if (presence === 1) {
-        hasFood = true;
-    } else if (presence === 0) {
-        hasFood = false;
-    }
-
-    return (
-        <div className="pt-24 px-10 pb-12 max-w-7xl mx-auto">
-            {/* Header Content */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
-                <div className="max-w-2xl">
-                    <ConnectionBadge status={deviceStatus} />
-                    
-                    <h2 className="text-5xl font-extrabold text-on-surface tracking-tight leading-[1.1] mb-4 drop-shadow-sm">
-                        Deep Learning <span className="text-primary italic font-serif">Safety Prediction</span>
-                    </h2>
-                    <p className="text-on-surface-variant text-lg leading-relaxed font-medium">
-                        Real-time food freshness analysis using sensor intelligence.
-                    </p>
-                </div>
-            </div>
-
-            {/* Main AI Matrix & Cards */}
-            <div className="grid grid-cols-12 gap-8">
-                
-                {/* AI Circular Display */}
-                <div className="col-span-12 lg:col-span-4">
-                    <StatusCircle status={prediction.status} recommendation={prediction.recommendation} />
-                </div>
-
-                {/* Hardware Grid & Risk Cards */}
-                <div className="col-span-12 lg:col-span-8 flex flex-col gap-8">
-                    
-                    {/* Real-time Hardware Integration Map */}
-                    <div className="bg-surface-container-low p-8 rounded-3xl border border-white/60 shadow-[0_12px_40px_rgba(24,28,30,0.06)] backdrop-blur-md relative overflow-hidden flex-1">
-                        
-                        <div className="flex justify-between items-start mb-10">
-                            <div>
-                                <h3 className="text-2xl font-extrabold tracking-tight mb-1 text-on-surface">Hardware Sensor Matrix</h3>
-                                <p className="text-on-surface-variant text-sm font-medium">Monitoring active COM4 telemetry and state feeds.</p>
-                            </div>
-                        </div>
-
-                        <div className="space-y-10">
-                            <SensorCard 
-                                title="Gas Value (MQ)" 
-                                icon="MQ" 
-                                valueText={sensorData.gas_value || 0} 
-                                valueSubtext="RAW"
-                            >
-                                <GasBar value={sensorData.gas_value || 0} />
-                            </SensorCard>
-                            
-                            <SensorCard 
-                                title="IR Presence" 
-                                icon="IR" 
-                                valueText={hasFood ? 'Food Detected' : 'No Food Detected'} 
-                                valueColorClass={hasFood ? 'text-primary' : 'text-error'}
-                            >
-                                <div className="h-4 bg-surface-container-highest rounded-full overflow-hidden flex drop-shadow-inner opacity-50 relative">
-                                    <div 
-                                        className={`h-full rounded-full transition-all duration-1000 ${hasFood ? 'bg-primary w-full' : 'bg-error w-full shadow-[inset_0_0_12px_rgba(0,0,0,0.2)]'}`}
-                                    ></div>
-                                </div>
-                            </SensorCard>
-                        </div>
-                    </div>
-
-                    {/* Meta Storage & Risk Blocks */}
-                    <div className="grid grid-cols-2 gap-8">
-                        <div className="bg-primary p-8 rounded-3xl shadow-[0_20px_50px_rgba(0,108,75,0.15)] text-on-primary flex flex-col relative overflow-hidden hover:scale-[1.02] transition-transform duration-300">
-                            <p className="text-sm font-bold opacity-80 uppercase tracking-widest mb-2 font-mono">Algorithm Risk Score</p>
-                            <h3 className="text-6xl font-black tracking-tighter drop-shadow-sm">
-                                {prediction.riskScore !== undefined ? Math.round(prediction.riskScore * 100) : 0}%
-                            </h3>
-                            <p className="text-sm leading-relaxed opacity-90 mt-4">Calculated from dynamic multi-sensor array mapping.</p>
-                            <div className="absolute -bottom-10 -right-10 opacity-10 rotate-12">
-                                <span className="material-symbols-outlined text-[150px]">radar</span>
-                            </div>
-                        </div>
-
-                        <div className="p-8 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] bg-[#1e293b] text-white flex flex-col relative overflow-hidden hover:scale-[1.02] transition-transform duration-300">
-                            <p className="text-sm font-bold opacity-70 uppercase tracking-widest mb-2 text-primary-container font-mono">Storage Record</p>
-                            <div className="flex items-end gap-3 mt-auto">
-                                <h3 className="text-6xl font-black tracking-tighter text-white drop-shadow-md">{sensorData.storageDays || 0}</h3>
-                                <span className="text-xl font-bold opacity-70 pb-2">DAYS</span>
-                            </div>
-                            <div className="absolute -bottom-6 -right-6 opacity-20">
-                                <span className="material-symbols-outlined text-[120px]">calendar_month</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+  return (
+    <div className="pt-24 px-6 md:px-10 pb-16 max-w-7xl mx-auto space-y-8 font-body">
+      
+      {/* Header Banner */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-slate-200">
+        <div>
+          <div className="flex items-center gap-2.5 mb-1.5">
+            <span className="p-2 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center">
+              <span className="material-symbols-outlined text-2xl">shield_with_heart</span>
+            </span>
+            <span className="text-xs font-black uppercase tracking-widest text-emerald-800 font-headline">
+              {mode === 'INDUSTRIAL' ? 'Industrial Quality Operations' : 'Intelligent Household Safety'}
+            </span>
+          </div>
+          <h1 className="text-3xl md:text-4xl font-black font-headline text-slate-900 tracking-tight">
+            SafeBite Executive Dashboard
+          </h1>
+          <p className="text-sm text-slate-500 max-w-2xl mt-1">
+            {mode === 'INDUSTRIAL'
+              ? 'Multi-lot screening analytics, warehouse FEFO tracking, and cold-chain compliance monitoring.'
+              : 'Real-time food condition monitoring, nutritional tracking, and pantry shelf-life intelligence.'}
+          </p>
         </div>
-    );
+
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => onNavigate && onNavigate('Scan Food')}
+            className="px-4 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-headline font-black text-xs rounded-xl shadow-md shadow-emerald-700/20 flex items-center gap-2 cursor-pointer"
+          >
+            <span className="material-symbols-outlined text-base">qr_code_scanner</span>
+            New Food Scan
+          </button>
+        </div>
+      </div>
+
+      {/* KPI Top Cards */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        {/* Total Scans */}
+        <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div className="flex justify-between items-start">
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono">Total Inspections</span>
+            <span className="material-symbols-outlined text-slate-400">history</span>
+          </div>
+          <div className="my-2">
+            <span className="text-4xl font-black font-headline text-slate-900">{totalScans}</span>
+            <span className="text-xs text-slate-500 ml-1">scans logged</span>
+          </div>
+          <span className="text-[11px] text-slate-500">Across {inventory.length} active inventory lots</span>
+        </div>
+
+        {/* Fresh Condition % */}
+        <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div className="flex justify-between items-start">
+            <span className="text-[10px] font-bold text-emerald-600 uppercase tracking-wider font-mono">Fresh Quality Rate</span>
+            <span className="material-symbols-outlined text-emerald-500">check_circle</span>
+          </div>
+          <div className="my-2">
+            <span className="text-4xl font-black font-headline text-emerald-600">
+              {totalScans > 0 ? Math.round((freshScans / totalScans) * 100) : 100}%
+            </span>
+            <span className="text-xs text-slate-500 ml-1">passed screening</span>
+          </div>
+          <span className="text-[11px] text-emerald-700 font-medium">{freshScans} optimal lots</span>
+        </div>
+
+        {/* Consume Soon */}
+        <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div className="flex justify-between items-start">
+            <span className="text-[10px] font-bold text-amber-600 uppercase tracking-wider font-mono">Consume Soon (FEFO)</span>
+            <span className="material-symbols-outlined text-amber-500">priority_high</span>
+          </div>
+          <div className="my-2">
+            <span className="text-4xl font-black font-headline text-amber-600">{warningScans}</span>
+            <span className="text-xs text-slate-500 ml-1">approaching limit</span>
+          </div>
+          <span className="text-[11px] text-amber-700 font-medium">Prioritize immediate use</span>
+        </div>
+
+        {/* Active Spoilage Alerts */}
+        <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div className="flex justify-between items-start">
+            <span className="text-[10px] font-bold text-rose-600 uppercase tracking-wider font-mono">Active Spoilage / Alerts</span>
+            <span className="material-symbols-outlined text-rose-500">warning</span>
+          </div>
+          <div className="my-2">
+            <span className="text-4xl font-black font-headline text-rose-600">{activeAlerts.length}</span>
+            <span className="text-xs text-slate-500 ml-1">unresolved</span>
+          </div>
+          <span className="text-[11px] text-rose-700 font-medium">{spoiledScans} spoiled units quarantined</span>
+        </div>
+
+      </div>
+
+      {/* Main Split Matrix: Recent Inspections (Left) + Hardware Diagnostic & Actions (Right) */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        {/* Left Column: Recent Inspections Log Table */}
+        <div className="lg:col-span-8 bg-white p-7 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+          <div className="flex justify-between items-center pb-3 border-b border-slate-100">
+            <div>
+              <h3 className="font-headline font-black text-slate-900 text-lg">Recent Condition Screenings</h3>
+              <p className="text-xs text-slate-500">Live screening records from SafeBite hardware and barcode scan sessions.</p>
+            </div>
+            <button
+              onClick={() => onNavigate && onNavigate('History')}
+              className="text-xs font-bold text-emerald-700 hover:text-emerald-800 cursor-pointer"
+            >
+              View All History →
+            </button>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-xs">
+              <thead className="bg-slate-50 text-slate-500 font-mono uppercase text-[10px] tracking-wider border-b border-slate-200">
+                <tr>
+                  <th className="px-4 py-2.5 font-bold">Product</th>
+                  <th className="px-4 py-2.5 font-bold">Category</th>
+                  <th className="px-4 py-2.5 font-bold">Timestamp</th>
+                  <th className="px-4 py-2.5 font-bold">Screening Condition</th>
+                  <th className="px-4 py-2.5 font-bold text-right">Score</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 font-medium text-slate-700">
+                {scans.slice(0, 5).map((scan) => (
+                  <tr key={scan.id} className="hover:bg-slate-50 transition-colors">
+                    <td className="px-4 py-3 font-bold text-slate-900">{scan.productName}</td>
+                    <td className="px-4 py-3 font-mono text-slate-500">{scan.category}</td>
+                    <td className="px-4 py-3 font-mono text-slate-500">{scan.timestamp}</td>
+                    <td className="px-4 py-3">
+                      <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider ${
+                        scan.condition === 'SPOILED' ? 'bg-rose-100 text-rose-800' : scan.condition === 'CONSUME_SOON' ? 'bg-amber-100 text-amber-900' : 'bg-emerald-100 text-emerald-800'
+                      }`}>
+                        {scan.statusText}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 text-right font-headline font-bold text-slate-900">
+                      {scan.foodConditionScore}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Right Column: Hardware Twin Status & Quick Links */}
+        <div className="lg:col-span-4 space-y-6">
+          
+          {/* Hardware Diagnostic Status Box */}
+          <div className="bg-[#0f172a] text-slate-200 p-6 rounded-3xl border border-slate-800 shadow-xl space-y-4">
+            <div className="flex justify-between items-center pb-3 border-b border-slate-800">
+              <div className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-emerald-400 text-xl">memory</span>
+                <span className="font-headline font-black text-xs text-white uppercase tracking-wider">Hardware Section Status</span>
+              </div>
+              <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">
+                LOCKED BASELINE
+              </span>
+            </div>
+
+            <p className="text-xs text-slate-400 leading-relaxed">
+              The existing SafeBite Hardware Controller operates independently via 9600 Baud Web Serial and mirrors physical Arduino LEDs (D13, D6, D7) and Parallel LCD (1602A).
+            </p>
+
+            <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+              <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800">
+                <span className="text-slate-500 block text-[10px]">MQ-135 Gas:</span>
+                <span className="text-white font-bold">{liveTelemetry.gas_value || 140} RAW</span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800">
+                <span className="text-slate-500 block text-[10px]">IR Trigger:</span>
+                <span className="text-emerald-400 font-bold">Pin D8 (Active LOW)</span>
+              </div>
+            </div>
+
+            <button
+              onClick={() => onNavigate && onNavigate('Hardware')}
+              className="w-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-400 text-xs font-bold border border-slate-700 flex items-center justify-center gap-2 transition-all cursor-pointer"
+            >
+              <span className="material-symbols-outlined text-base">developer_board</span>
+              Open Hardware Controller Twin →
+            </button>
+          </div>
+
+          {/* Quick Platform Actions */}
+          <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+            <h4 className="font-headline font-black text-slate-900 text-xs uppercase tracking-wider">Quick Jump</h4>
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                onClick={() => onNavigate && onNavigate('Inventory')}
+                className="p-3 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700 text-left cursor-pointer"
+              >
+                📦 FEFO Inventory
+              </button>
+              <button
+                onClick={() => onNavigate && onNavigate('Nutrition')}
+                className="p-3 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700 text-left cursor-pointer"
+              >
+                🥗 Nutrition Calc
+              </button>
+              <button
+                onClick={() => onNavigate && onNavigate('AI Assistant')}
+                className="p-3 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700 text-left cursor-pointer"
+              >
+                🧠 AI Assistant
+              </button>
+              <button
+                onClick={() => onNavigate && onNavigate('Waste Reduction')}
+                className="p-3 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700 text-left cursor-pointer"
+              >
+                🌱 Waste Analytics
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  );
 }
