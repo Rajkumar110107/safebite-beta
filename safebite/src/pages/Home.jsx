@@ -19,26 +19,32 @@ import About from '../components/About';
 
 function MainPlatform() {
   const [activeTab, setActiveTab] = useState('Dashboard');
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    setIsMobileNavOpen(false);
+  };
 
   const renderView = () => {
     switch (activeTab) {
       case 'Dashboard':
-        return <Dashboard onNavigate={setActiveTab} />;
+        return <Dashboard onNavigate={handleTabChange} />;
       case 'Scan Food':
-        return <ScanFood onNavigate={setActiveTab} />;
+        return <ScanFood onNavigate={handleTabChange} />;
       case 'Hardware':
         // Protected, original, locked Hardware module rendered directly
         return <Hardware />;
       case 'Food Details':
-        return <FoodDetails onNavigate={setActiveTab} />;
+        return <FoodDetails onNavigate={handleTabChange} />;
       case 'Nutrition':
-        return <Nutrition onNavigate={setActiveTab} />;
+        return <Nutrition onNavigate={handleTabChange} />;
       case 'Food Condition':
-        return <FoodCondition onNavigate={setActiveTab} />;
+        return <FoodCondition onNavigate={handleTabChange} />;
       case 'Inventory':
-        return <Inventory onNavigate={setActiveTab} />;
+        return <Inventory onNavigate={handleTabChange} />;
       case 'Batch Management':
-        return <BatchManagement onNavigate={setActiveTab} />;
+        return <BatchManagement onNavigate={handleTabChange} />;
       case 'Cold Chain':
         return <StorageColdChain />;
       case 'Waste Reduction':
@@ -46,26 +52,35 @@ function MainPlatform() {
       case 'AI Assistant':
         return <AiAssistant />;
       case 'History':
-        return <History onNavigate={setActiveTab} />;
+        return <History onNavigate={handleTabChange} />;
       case 'Alerts':
-        return <Alerts onNavigate={setActiveTab} />;
+        return <Alerts onNavigate={handleTabChange} />;
       case 'About':
         return <About />;
       default:
-        return <Dashboard onNavigate={setActiveTab} />;
+        return <Dashboard onNavigate={handleTabChange} />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-body flex">
-      {/* Grouped Sidebar */}
-      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+    <div className="min-h-screen bg-[#f8fafc] dark:bg-[#0b0f19] text-slate-800 dark:text-slate-100 font-body flex flex-col transition-colors duration-200">
+      {/* Grouped Sidebar with Mobile Drawer support */}
+      <Sidebar
+        activeTab={activeTab}
+        setActiveTab={handleTabChange}
+        isOpen={isMobileNavOpen}
+        onClose={() => setIsMobileNavOpen(false)}
+      />
       
-      {/* Topbar with Mode Toggle and Alerts */}
-      <Topbar onNavigate={setActiveTab} />
+      {/* Topbar with Mode Toggle, Theme Toggle (Sun/Moon), and Hamburger for Mobile */}
+      <Topbar
+        onNavigate={handleTabChange}
+        onToggleMobileNav={() => setIsMobileNavOpen((prev) => !prev)}
+        isMobileNavOpen={isMobileNavOpen}
+      />
 
       {/* Main Content Area */}
-      <main className="ml-64 flex-1 min-h-screen bg-[#f8fafc]">
+      <main className="ml-0 lg:ml-64 flex-1 min-h-screen bg-[#f8fafc] dark:bg-[#0b0f19] transition-colors duration-200 overflow-x-hidden">
         {renderView()}
       </main>
     </div>

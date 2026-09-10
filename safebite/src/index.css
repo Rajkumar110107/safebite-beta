@@ -1,2 +1,38 @@
-/* Safebite UI - Tailwind replaces previous custom CSS */
+/* SafeBite Design System - Dark Mode and Responsive Global Styles */
+html {
+  transition: background-color 0.25s ease, color 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
 
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom modern scrollbar for dark & light */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

@@ -8,6 +8,24 @@ export function PlatformProvider({ children }) {
   // Mode: 'INDIVIDUAL' | 'INDUSTRIAL'
   const [mode, setMode] = useState(() => storageService.getSettings().mode || 'INDIVIDUAL');
   
+  // Theme: 'light' | 'dark'
+  const [theme, setTheme] = useState(() => storageService.getSettings().theme || 'light');
+
+  // Synchronize 'dark' class on <html> document element
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    storageService.saveSettings({ ...storageService.getSettings(), theme: nextTheme });
+  };
+  
   // Persistent Collections
   const [scans, setScans] = useState(() => storageService.getScans());
   const [inventory, setInventory] = useState(() => storageService.getInventory());
@@ -254,6 +272,9 @@ export function PlatformProvider({ children }) {
       value={{
         mode,
         switchMode,
+        theme,
+        setTheme,
+        toggleTheme,
         scans,
         inventory,
         batches,

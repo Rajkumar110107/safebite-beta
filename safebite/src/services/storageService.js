@@ -462,9 +462,9 @@ export const storageService = {
   getSettings() {
     try {
       const data = localStorage.getItem(STORAGE_KEYS.SETTINGS);
-      return data ? JSON.parse(data) : { mode: 'INDIVIDUAL', soundEnabled: true };
+      return data ? JSON.parse(data) : { mode: 'INDIVIDUAL', theme: 'light', soundEnabled: true };
     } catch {
-      return { mode: 'INDIVIDUAL', soundEnabled: true };
+      return { mode: 'INDIVIDUAL', theme: 'light', soundEnabled: true };
     }
   },
   saveSettings(settings) {
